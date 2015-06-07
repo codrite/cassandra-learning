@@ -21,6 +21,7 @@ public class QueryTableTest extends ClusterSetup {
     public void queryTransactionTableInSimpleKeyspace() {
         Session session = cassandraCluster.connect(SIMPLE_KEYSPACE);
 
+        session.execute("truncate transaction");
         ResultSet countResult = session.execute("select COUNT(1) AS COUNT from transaction");
         Assert.assertEquals(0, countResult.all().get(0).getLong("COUNT"));
 
