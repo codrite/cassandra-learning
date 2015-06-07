@@ -34,7 +34,7 @@ public class InsertNRowsInTransactionTable extends ClusterSetup {
     }
 
     @Test
-    public void insertMillionRows() throws ParseException {
+    public void runAPerformanceTestToExecuteBulkInserts() throws ParseException {
         Session session = cassandraCluster.connect(SIMPLE_KEYSPACE);
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         final Date date = simpleDateFormat.parse("2015-01-01");
